@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Master</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+  <style>
+    body {
+        font: 400 15px Lato, sans-serif;
+        line-height: 1.8;
+        color: #333;
+    }
+    h1, h2, h3, h4 {
+        font-family: Montserrat, sans-serif;
+        color: #333;
+    }
+    .jumbotron {
+        background-color: #1c1c1c;
+        color: #fff;
+        padding: 100px 25px;
+        font-family: Montserrat, sans-serif;
+    }
+    .container-fluid {
+        padding: 60px 50px;
+    }
+    .navbar {
+        margin-bottom: 0;
+        background-color: #1c1c1c;
+        z-index: 9999;
+        border: 0;
+        font-size: 12px !important;
+        line-height: 1.42857143 !important;
+        letter-spacing: 1px;
+        border-radius: 0;
+        font-family: Montserrat, sans-serif;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #1c1c1c !important;
+        background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+    }
+    footer {
+        background-color: #1c1c1c;
+        color: #fff;
+        padding: 30px;
+    }
+    footer .glyphicon {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .btn-custom {
+        background-color: #1c1c1c;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-custom:hover {
+        background-color: #fff;
+        color: #1c1c1c;
+    }
+    .img-responsive {
+        margin: 0 auto;
+    }
+    .tagline {
+        color: rgb(196, 195, 194); /* Gold color */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .jumbotron .btn-custom {
+        margin-top: 20px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".navbar a, footer a[href='#mainPage']").on('click', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+          window.location.hash = hash;
+        });
+      });
+    });
+  </script>
+</head>
+<body id="mainPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#mainPage">
+        
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#source">Source Code</a></li>
+        <li><a href="#tracker">Report a Problem</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center" style="margin-top: 50px;">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <img src="Logo.png" alt="Text Master logo" style="max-width: 100%;" class="img-responsive">
+      <h2 class="tagline">Your Gateway to Advanced Text Processing</h2>
+      <a href="#documentation" class="btn btn-custom">Get Started</a>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div id="intro" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2>Welcome to Text Master</h2>
+      <p>Welcome to Text Master, an advanced text summarizer developed using state-of-the-art language models. This tool helps you quickly and efficiently summarize large text files including PDFs, TXT, and DOCX formats. It supports multiple models, such as OpenAI GPT-3.5-turbo and GPT-4, to generate accurate and concise summaries. Text Master is designed to assist researchers, students, and professionals in managing and utilizing their text data more effectively.</p>
+      <img src="textsummarizerremoved.png" alt="Introduction" class="img-responsive" style="margin-top: 50px;">
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div id="documentation" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2>Documentation</h2>
+      <p>Get started with Text Master by following the documentation below:</p>
+      <h4>Installation and Setup</h4>
+      <p>To set up the Text Master application, follow these steps:</p>
+      <ul>
+        <li>Clone the repository from GitHub: <code>git clone https://github.com/HsnSalman/Text_Summarizer</code></li>
+        <li>Navigate to the project directory: <code>cd Text_Summarizer</code></li>
+        <li>Install the required dependencies: <code>pip install -r requirements.txt</code></li>
+        <li>Create a .env file in the root directory of your project and add your API keys there: e.g. <code>OPENAI_API_KEY="your_openai_api_key_here"</code></li>
+        <li>Run the Streamlit application: <code>streamlit run Text_Master.py</code></li>
+      </ul>
+      <h4>Usage</h4>
+      <p>Once the application is running, follow these steps to use Text Master:</p>
+      <ol>
+        <li>Select the LLM Model from the sidebar options.</li>
+        <li>Enter your API key for the selected model.</li>
+        <li>Upload a text file (PDF, TXT, DOCX) for summarization.</li>
+        <li>Preview the uploaded content in the provided text area.</li>
+        <li>Customize the summary length using the slider.</li>
+        <li>Click the "Generate Summary" button to get the summarized text.</li>
+        <li>Download the summarized text using the provided download button.</li>
+      </ol>
+      <h4>Advanced Features</h4>
+      <p>Text Master also offers advanced text analysis options, including:</p>
+      <ul>
+        <li>Sentiment Analysis: Analyze the sentiment of the text content.</li>
+        <li>Keywords Extraction: Extract important keywords from the text.</li>
+        <li>Language Translation: Translate the text into French language.</li>
+        <li>Text to Speech: Convert the Summarized Text into Speech.</li>
+        <li>Ask Questions: Get answers to specific questions based on the uploaded text content.</li>
+      </ul>
+      <video controls class="img-responsive" style="margin-top: 20px;">
+        <source src="documentation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div id="source" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2>Source Code</h2>
+      <p>Access the source code on our GitHub repository. Contribute to the project or customize it to suit your needs.</p>
+      <a href="https://github.com/HsnSalman/Text_Summarizer" target="_blank" class="btn btn-custom">GitHub Repository</a>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div id="tracker" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2>Report a Problem</h2>
+      <p>If you encounter any issues or have suggestions for improvements, please report them on our issue tracker.</p>
+      <a href="https://github.com/HsnSalman/Text_Summarizer/issues" target="_blank" class="btn btn-custom">Issue Tracker</a>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2>About Text Master</h2>
+      <p>Text Master is developed by Hassan Salman in the Move team at LIP6, Sorbonne Université.</p>
+      <p>If you want to collaborate or have a case study, feel free to send an email to: <a href="mailto:hassan.salman@etu.sorbonne-universite.fr">hassan.salman@etu.sorbonne-universite.fr</a></p>
+      <img src="lip6.png" alt="About" class="img-responsive" style="margin-top: 25px;">
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>&copy; 2024 Laboratoire d'Informatique de Paris 6, CNRS, Sorbonne Universités. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
